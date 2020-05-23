@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/PixelFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://utils/TextBox.gd" type="Script" id=2]
+
+[node name="TextBox" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Base" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -11.5
+margin_right = 20.0
+margin_bottom = 11.5
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 0.498039 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -11.5
+margin_right = 20.0
+margin_bottom = 11.5
+custom_fonts/font = ExtResource( 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

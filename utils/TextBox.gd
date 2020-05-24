@@ -10,8 +10,7 @@ onready var top: Label = $Top
 ##
 
 func _ready() -> void:
-	base.text = self.text_to_type
-	top.text = self.text_to_type
+	pass
 
 ##
 # Connections
@@ -25,4 +24,6 @@ func _ready() -> void:
 # Public functions
 ##
 
-
+func initialize_labels(label_text: String) -> void:
+	base.text = label_text
+	top.text = label_text

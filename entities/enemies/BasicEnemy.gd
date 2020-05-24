@@ -1,3 +1,5 @@
+class_name BasicEnemy
+
 extends KinematicBody2D
 
 ##

@@ -28,7 +28,7 @@ func _on_timeout():
 ##
 
 func _spawn():
-	var entity_instance = entity_to_spawn.instance()
+	var entity_instance: BasicEnemy = entity_to_spawn.instance()
 	entity_instance.global_position = self.global_position
 	self.get_parent().call_deferred("add_child", entity_instance)
 	self.number_to_spawn -= 1

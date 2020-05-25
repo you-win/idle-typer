@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/enemies/Slime.png" type="Texture" id=1]
 [ext_resource path="res://entities/enemies/BasicEnemy.gd" type="Script" id=2]
-[ext_resource path="res://utils/TextBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/TextBox.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 3 )
@@ -22,4 +22,3 @@ hframes = 8
 
 [node name="TextBox" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, -14 )
-text_to_type = "Hello"

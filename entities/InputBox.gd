@@ -10,6 +10,8 @@ func _ready() -> void:
 	PubSub.subscribe(GameManager.PUBSUB_KEYS.ENEMY_KILLED, self)
 
 func _process(_delta: float) -> void:
+	GameManager.current_input = line_edit.text
+	
 	if Input.is_action_just_pressed("ui_accept"):
 		if _is_valid_input(line_edit.text):
 			# Spawner does not subscribe to this

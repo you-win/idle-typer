@@ -13,23 +13,13 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	var new_display_text: String = ""
+	var new_visible_characters = 0
 	var current_input_length = GameManager.current_input.length()
 	if(current_input_length > 0 and not current_input_length > text_to_type.length()):
-		var index: int = 0
 		for i in current_input_length:
-			index = i
-			var text = text_to_type[i]
-			if text == GameManager.current_input[i]:
-				new_display_text += " "
-			else:
-				new_display_text += text
-				break
-		for j in range(index + 1, text_to_type.length()):
-			new_display_text += text_to_type[j]
-	else:
-		new_display_text = text_to_type
-	top.text = new_display_text
+			if text_to_type[i] == GameManager.current_input[i]:
+				new_visible_characters += 1
+	top.visible_characters = new_visible_characters
 
 ##
 # Connections

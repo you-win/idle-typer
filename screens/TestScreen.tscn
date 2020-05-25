@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://entities/enemies/BasicEnemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/Spawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://utils/InputBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/EnemyMovePoint.tscn" type="PackedScene" id=4]
 
 [node name="TestScreen" type="Node2D"]
 
@@ -10,10 +11,41 @@
 current = true
 zoom = Vector2( 0.25, 0.25 )
 
-[node name="Spawner" parent="." instance=ExtResource( 2 )]
-position = Vector2( -49.8438, -26.6205 )
-entity_to_spawn = ExtResource( 1 )
-spawn_on_ready = true
-
 [node name="InputBox" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 51 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Spawners" type="Node" parent="."]
+
+[node name="Spawner" parent="Spawners" instance=ExtResource( 2 )]
+position = Vector2( -113, -88 )
+entity_to_spawn = ExtResource( 1 )
+spawn_on_ready = true
+move_point_name = "1"
+
+[node name="Spawner2" parent="Spawners" instance=ExtResource( 2 )]
+position = Vector2( 10, -90 )
+entity_to_spawn = ExtResource( 1 )
+spawn_on_ready = true
+move_point_name = "2"
+
+[node name="Spawner3" parent="Spawners" instance=ExtResource( 2 )]
+position = Vector2( 123, -90 )
+entity_to_spawn = ExtResource( 1 )
+spawn_on_ready = true
+move_point_name = "3"
+
+[node name="MovePoints" type="Node" parent="."]
+
+[node name="EnemyMovePoint" parent="MovePoints" instance=ExtResource( 4 )]
+position = Vector2( -85, -21 )
+move_point_name = "1"
+
+[node name="EnemyMovePoint2" parent="MovePoints" instance=ExtResource( 4 )]
+position = Vector2( -4, -33 )
+move_point_name = "2"
+
+[node name="EnemyMovePoint3" parent="MovePoints" instance=ExtResource( 4 )]
+position = Vector2( 93, -21 )
+move_point_name = "3"

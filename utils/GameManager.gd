@@ -9,6 +9,11 @@ const DICTIONARY_PATH: String = "res://assets/words_dictionary.json"
 const DICTIONARY_SIZE: int = 370101
 const STARTING_MAX_WORD_LENGTH: int = 4
 
+const PUBSUB_KEYS: Dictionary = {
+	"ENEMY_KILLED": "ENEMY_KILLED",
+	"ENEMY_KILLED_SPAWNER": "ENEMY_KILLED_SPAWNER"
+}
+
 # Uses the current time as a seed, according to the docs
 var rng = RandomNumberGenerator.new()
 
@@ -133,3 +138,11 @@ func get_random_word(scale: int = -1) -> String:
 	else:
 		var random_number: int = rng.randi_range(0, DICTIONARY_SIZE)
 		return full_dictionary[random_number]
+
+func event_published(event_key: String, payload):
+	match event_key:
+		PUBSUB_KEYS.ENEMY_KILLED:
+			if self.words_in_play.has(payload):
+				self.words_in_play.erase(payload)
+		_:
+			pass

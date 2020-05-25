@@ -7,12 +7,16 @@ onready var line_edit = $LineEdit
 ##
 
 func _ready() -> void:
-	pass
+	PubSub.subscribe(GameManager.PUBSUB_KEYS.ENEMY_KILLED, self)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		if _is_valid_input(line_edit.text):
-			pass
+			# Spawner does not subscribe to this
+			# Spawner subscribes to ENEMY_KILLED_SPAWNER since there can be
+			# multiple enemies with the same word
+			PubSub.publish(GameManager.PUBSUB_KEYS.ENEMY_KILLED, line_edit.text)
+			line_edit.text = ""
 
 ##
 # Connections
@@ -31,4 +35,7 @@ func _is_valid_input(text: String) -> bool:
 # Public functions
 ##
 
-
+func event_published(event_key: String, payload):
+	match event_key:
+		_:
+			pass

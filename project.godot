@@ -34,6 +34,11 @@ config/icon="res://assets/icon.png"
 
 LOGGER="*res://utils/Logger.gd"
 GameManager="*res://utils/GameManager.gd"
+PubSub="*res://utils/pub-sub/PubSub.gd"
+
+[debug]
+
+gdscript/warnings/return_value_discarded=false
 
 [display]
 

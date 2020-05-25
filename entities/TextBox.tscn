@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/PixelFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/PressStart.tres" type="DynamicFont" id=1]
 [ext_resource path="res://entities/TextBox.gd" type="Script" id=2]
 
 [node name="TextBox" type="Node2D"]

@@ -19,33 +19,58 @@ position = Vector2( 0, 51 )
 [node name="Spawners" type="Node" parent="."]
 
 [node name="Spawner" parent="Spawners" instance=ExtResource( 2 )]
-position = Vector2( -113, -88 )
+position = Vector2( -156, -13 )
 entity_to_spawn = ExtResource( 1 )
 spawn_on_ready = true
 move_point_name = "1"
+current_scale = -1
 
 [node name="Spawner2" parent="Spawners" instance=ExtResource( 2 )]
-position = Vector2( 10, -90 )
+position = Vector2( -104, -92 )
 entity_to_spawn = ExtResource( 1 )
 spawn_on_ready = true
 move_point_name = "2"
+current_scale = -1
 
 [node name="Spawner3" parent="Spawners" instance=ExtResource( 2 )]
-position = Vector2( 123, -90 )
+position = Vector2( -9, -95 )
 entity_to_spawn = ExtResource( 1 )
 spawn_on_ready = true
 move_point_name = "3"
+current_scale = -1
+
+[node name="Spawner4" parent="Spawners" instance=ExtResource( 2 )]
+position = Vector2( 88, -95 )
+entity_to_spawn = ExtResource( 1 )
+spawn_on_ready = true
+move_point_name = "4"
+current_scale = -1
+
+[node name="Spawner5" parent="Spawners" instance=ExtResource( 2 )]
+position = Vector2( 163, -27 )
+entity_to_spawn = ExtResource( 1 )
+spawn_on_ready = true
+move_point_name = "5"
+current_scale = -1
 
 [node name="MovePoints" type="Node" parent="."]
 
 [node name="EnemyMovePoint" parent="MovePoints" instance=ExtResource( 4 )]
-position = Vector2( -85, -21 )
+position = Vector2( -96, 26 )
 move_point_name = "1"
 
 [node name="EnemyMovePoint2" parent="MovePoints" instance=ExtResource( 4 )]
-position = Vector2( -4, -33 )
+position = Vector2( -75, -34 )
 move_point_name = "2"
 
 [node name="EnemyMovePoint3" parent="MovePoints" instance=ExtResource( 4 )]
-position = Vector2( 93, -21 )
+position = Vector2( -4, -22 )
 move_point_name = "3"
+
+[node name="EnemyMovePoint4" parent="MovePoints" instance=ExtResource( 4 )]
+position = Vector2( 66, -3 )
+move_point_name = "4"
+
+[node name="EnemyMovePoint5" parent="MovePoints" instance=ExtResource( 4 )]
+position = Vector2( 69, 42 )
+move_point_name = "5"

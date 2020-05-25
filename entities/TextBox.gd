@@ -19,6 +19,9 @@ func _process(delta: float) -> void:
 		for i in current_input_length:
 			if text_to_type[i] == GameManager.current_input[i]:
 				new_visible_characters += 1
+			else:
+				new_visible_characters = 0
+				break
 	top.visible_characters = new_visible_characters
 
 ##

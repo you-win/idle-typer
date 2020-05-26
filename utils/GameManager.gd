@@ -17,6 +17,8 @@ const PUBSUB_KEYS: Dictionary = {
 # Uses the current time as a seed, according to the docs
 var rng = RandomNumberGenerator.new()
 
+var player_data: Reference = preload("res://utils/PlayerData.gd").new()
+
 var full_dictionary: Array = []
 var scaled_dictionary: Dictionary = {}
 
@@ -36,6 +38,8 @@ func _ready() -> void:
 	# Load the entire dictionary into a list
 	self.full_dictionary = _load_dictionary(DICTIONARY_PATH)
 	self.scaled_dictionary = _scale_dictionary(self.full_dictionary)
+	
+	PubSub.subscribe(self.PUBSUB_KEYS.ENEMY_KILLED, self)
 	
 	if DEBUG:
 		LOGGER.info("Using seed " + str(rng.seed))
@@ -144,5 +148,7 @@ func event_published(event_key: String, payload):
 		PUBSUB_KEYS.ENEMY_KILLED:
 			if self.words_in_play.has(payload):
 				self.words_in_play.erase(payload)
+				self.player_data.increase_words(1.0)
+				self.player_data.increase_letters(payload.length())
 		_:
 			pass

@@ -1,42 +1,71 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/PressStart.tres" type="DynamicFont" id=1]
+[ext_resource path="res://utils/ui/GeneralGUI.gd" type="Script" id=2]
 
 [node name="GeneralGUI" type="CanvasLayer"]
+scale = Vector2( 4, 4 )
+transform = Transform2D( 4, 0, 0, 4, 0, 0 )
+script = ExtResource( 2 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_bottom = 1.0
-margin_left = 44.0
-margin_top = 44.0
+margin_left = 20.0
+margin_top = 20.0
 margin_right = 44.0
-margin_bottom = -44.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 150.0
-margin_bottom = 812.0
+[node name="OuterVBox" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 44.0
+margin_bottom = 880.0
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-margin_right = 150.0
-margin_bottom = 75.0
+[node name="CounterVBox" type="VBoxContainer" parent="MarginContainer/OuterVBox"]
+margin_right = 44.0
+margin_bottom = 46.0
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer"]
-margin_right = 150.0
-margin_bottom = 75.0
-rect_min_size = Vector2( 150, 75 )
+[node name="WordsLabelContainer" type="MarginContainer" parent="MarginContainer/OuterVBox/CounterVBox"]
+margin_right = 44.0
+margin_bottom = 21.0
+
+[node name="WordsLabel" type="Label" parent="MarginContainer/OuterVBox/CounterVBox/WordsLabelContainer"]
+margin_right = 44.0
+margin_bottom = 21.0
+
+[node name="LettersLabelContainer" type="MarginContainer" parent="MarginContainer/OuterVBox/CounterVBox"]
+margin_top = 25.0
+margin_right = 44.0
+margin_bottom = 46.0
+
+[node name="LettersLabel" type="Label" parent="MarginContainer/OuterVBox/CounterVBox/LettersLabelContainer"]
+margin_right = 44.0
+margin_bottom = 21.0
+
+[node name="ButtonVBox" type="VBoxContainer" parent="MarginContainer/OuterVBox"]
+margin_top = 50.0
+margin_right = 44.0
+margin_bottom = 82.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/OuterVBox/ButtonVBox"]
+margin_right = 44.0
+margin_bottom = 14.0
+size_flags_horizontal = 0
+
+[node name="Button" type="Button" parent="MarginContainer/OuterVBox/ButtonVBox/MarginContainer"]
+margin_right = 44.0
+margin_bottom = 14.0
 custom_fonts/font = ExtResource( 1 )
 text = "Test"
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 79.0
-margin_right = 150.0
-margin_bottom = 154.0
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/OuterVBox/ButtonVBox"]
+margin_top = 18.0
+margin_right = 44.0
+margin_bottom = 32.0
+size_flags_horizontal = 0
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2"]
-margin_right = 150.0
-margin_bottom = 75.0
-rect_min_size = Vector2( 150, 75 )
+[node name="Button" type="Button" parent="MarginContainer/OuterVBox/ButtonVBox/MarginContainer2"]
+margin_right = 44.0
+margin_bottom = 14.0
 custom_fonts/font = ExtResource( 1 )
 text = "Test"

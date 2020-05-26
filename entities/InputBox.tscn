@@ -17,7 +17,6 @@ margin_right = 57.5
 margin_bottom = 9.0
 custom_fonts/font = ExtResource( 2 )
 align = 1
-expand_to_text_length = true
 context_menu_enabled = false
 placeholder_text = "Input"
 placeholder_alpha = 0.4

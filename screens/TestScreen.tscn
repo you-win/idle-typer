@@ -1,53 +1,56 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://entities/enemies/BasicEnemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/Spawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entities/InputBox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://entities/EnemyMovePoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://utils/ui/GeneralGUI.tscn" type="PackedScene" id=5]
 
 [node name="TestScreen" type="Node2D"]
+
+[node name="GeneralGUI" parent="." instance=ExtResource( 5 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.25, 0.25 )
 
 [node name="InputBox" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, 51 )
+position = Vector2( 0, 92 )
 
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Spawners" type="Node" parent="."]
 
 [node name="Spawner" parent="Spawners" instance=ExtResource( 2 )]
-position = Vector2( -156, -13 )
+position = Vector2( 199, 74 )
 entity_to_spawn = ExtResource( 1 )
 spawn_on_ready = true
 move_point_name = "1"
 current_scale = -1
 
 [node name="Spawner2" parent="Spawners" instance=ExtResource( 2 )]
-position = Vector2( -104, -92 )
+position = Vector2( 198, 43 )
 entity_to_spawn = ExtResource( 1 )
 spawn_on_ready = true
 move_point_name = "2"
 current_scale = -1
 
 [node name="Spawner3" parent="Spawners" instance=ExtResource( 2 )]
-position = Vector2( -9, -95 )
+position = Vector2( 198, 4 )
 entity_to_spawn = ExtResource( 1 )
 spawn_on_ready = true
 move_point_name = "3"
 current_scale = -1
 
 [node name="Spawner4" parent="Spawners" instance=ExtResource( 2 )]
-position = Vector2( 88, -95 )
+position = Vector2( 199, -30 )
 entity_to_spawn = ExtResource( 1 )
 spawn_on_ready = true
 move_point_name = "4"
 current_scale = -1
 
 [node name="Spawner5" parent="Spawners" instance=ExtResource( 2 )]
-position = Vector2( 163, -27 )
+position = Vector2( 199, -68 )
 entity_to_spawn = ExtResource( 1 )
 spawn_on_ready = true
 move_point_name = "5"
@@ -56,21 +59,21 @@ current_scale = -1
 [node name="MovePoints" type="Node" parent="."]
 
 [node name="EnemyMovePoint" parent="MovePoints" instance=ExtResource( 4 )]
-position = Vector2( -96, 26 )
+position = Vector2( -17, 66 )
 move_point_name = "1"
 
 [node name="EnemyMovePoint2" parent="MovePoints" instance=ExtResource( 4 )]
-position = Vector2( -75, -34 )
+position = Vector2( 12, 29 )
 move_point_name = "2"
 
 [node name="EnemyMovePoint3" parent="MovePoints" instance=ExtResource( 4 )]
-position = Vector2( -4, -22 )
+position = Vector2( -21, -13 )
 move_point_name = "3"
 
 [node name="EnemyMovePoint4" parent="MovePoints" instance=ExtResource( 4 )]
-position = Vector2( 66, -3 )
+position = Vector2( 24, -42 )
 move_point_name = "4"
 
 [node name="EnemyMovePoint5" parent="MovePoints" instance=ExtResource( 4 )]
-position = Vector2( 69, 42 )
+position = Vector2( -29, -80 )
 move_point_name = "5"
